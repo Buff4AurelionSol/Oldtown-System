@@ -1,7 +1,5 @@
-export type ModalState = {
-  isOpen: boolean;
-  id: string;
-}
+export type ModalState = Record<string, boolean>
+
 
 export type TypeContextModal = {
   modalState: ModalState,

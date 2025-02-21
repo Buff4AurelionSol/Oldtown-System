@@ -1,6 +1,5 @@
 export const INTIAL_STATE_MODAL = {
-  isOpen: false,
-  id: ""
+  "": false
 }
 
 export const INITIAL_MODAL_CONTEXT = {

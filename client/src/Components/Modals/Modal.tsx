@@ -14,21 +14,15 @@ export function Modal({ children, id }: PropsModal) {
   const modalRoot = document.getElementById("modals");
 
   function closeModal(id: string) {
-    if (id !== modalState.id) {
-      console.log("No hay ningún modal con el id: ", id)
-      return
-    }
-
-    setModalState({
-      id,
-      isOpen: false
-    })
-
+    setModalState((prevState) => ({
+      ...prevState,
+      [id]: false
+    }))
   }
 
 
   function stopPropagation(e: React.MouseEvent<HTMLDivElement>) { e.stopPropagation() }
-  const isOpen = modalState.isOpen && modalState.id === id;
+  const isOpen = modalState[id] || false
 
   if (!modalRoot || !isOpen) {
     return null;
