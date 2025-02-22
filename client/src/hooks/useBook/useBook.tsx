@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { initialBooks } from "../consts/const"
-import { BookType } from "../types/types"
+import { initialBooks } from "../../consts/const"
+import { BookType } from "../../types/types"
 
 export function useBook() {
   const [books, setBooks] = useState<BookType[]>(initialBooks)
@@ -11,10 +11,11 @@ export function useBook() {
 
   function deleteBook(bookToDelete: BookType) {
     const newBook = books.filter((books) => {
-      return books != bookToDelete;
+      return books.title !== bookToDelete.title
     })
 
     setBooks(newBook)
+
   }
 
   function cleanBooks() {

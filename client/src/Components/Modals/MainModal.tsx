@@ -1,12 +1,11 @@
 import { Modal } from './Modal';
 import { BookType } from '../../types/types';
 import { BaseInput } from '../Inputs/BaseInput';
+import { UseContextBook } from '../../hooks/useBook/ContextBooks/useContextBook';
 
-interface PropsMainModal {
-  addBook: (book: BookType) => void
-}
 
-export function MainModal({ addBook }: PropsMainModal) {
+export function MainModal() {
+  const { addBook } = UseContextBook()
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();

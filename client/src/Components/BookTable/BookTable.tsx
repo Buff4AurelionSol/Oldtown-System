@@ -1,10 +1,7 @@
-import { BookType } from "../../types/types"
+import { UseContextBook } from "../../hooks/useBook/ContextBooks/useContextBook"
 
-interface PropsBookTable {
-  books: BookType[]
-}
-
-export function BookTable({ books }: PropsBookTable) {
+export function BookTable() {
+  const { books, deleteBook } = UseContextBook()
   return (
     <table>
       <thead>
@@ -14,6 +11,7 @@ export function BookTable({ books }: PropsBookTable) {
           <th>Autor</th>
           <th>Numero de Páginas</th>
           <th>Número de palabras</th>
+          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +22,7 @@ export function BookTable({ books }: PropsBookTable) {
             <td>{book.author}</td>
             <td>{book.pages}</td>
             <td>{book.words}</td>
+            <td><button onClick={() => deleteBook(book)}>X</button></td>
           </tr>
         )
         }
