@@ -9,10 +9,21 @@ export function useBook() {
     setBooks((prevState) => [...prevState, book])
   }
 
+  function deleteBook(bookToDelete: BookType) {
+    const newBook = books.filter((books) => {
+      return books != bookToDelete;
+    })
+
+    setBooks(newBook)
+  }
+
   function cleanBooks() {
     setBooks(initialBooks)
   }
 
-  return { books, setBooks, addBook, cleanBooks }
+
+
+
+  return { books, setBooks, addBook, cleanBooks, deleteBook }
 
 }
