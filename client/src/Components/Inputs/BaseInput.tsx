@@ -1,13 +1,16 @@
+import "./styles-base-inputs.css"
+
 interface PropsInput {
   label: string,
-  type: string
+  type: string,
+  name: string
 }
 
-export function BaseInput({ label, type }: PropsInput) {
+export function BaseInput({ label, type, name }: PropsInput) {
   return (
-    <label>
+    <label className="label-base">
       {label}
-      <input type={type} />
+      <input type={type} className="input-base" name={name} />
     </label>
   )
 }

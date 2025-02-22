@@ -1,0 +1,18 @@
+.label-base{
+  width: 30%;
+  height: 30px;  
+  color: white; 
+  font-weight: bold;
+  display: flex; 
+  justify-content: center;
+  align-items: center;  
+}
+
+
+.input-base{
+  width: 70%; 
+  height: 25px;
+  border-style: solid; 
+  border-radius: 4px; 
+  outline: none; 
+}

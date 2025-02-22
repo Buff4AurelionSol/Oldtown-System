@@ -1,6 +1,7 @@
 import { ReactNode, useRef } from "react"
 import { useModalContext } from "./context/useModalContext"
 import { createPortal } from "react-dom";
+import "./styles-modal.css"
 
 interface PropsModal {
   children: ReactNode,
@@ -34,7 +35,6 @@ export function Modal({ children, id }: PropsModal) {
     <div className="overlay" onClick={() => closeModal(id)}>
       <div className="modal" onClick={stopPropagation} ref={modalRef} id={id}>
         {children}
-        {modalRef.current && modalRef.current.id}
       </div>
     </div>, modalRoot
   )
