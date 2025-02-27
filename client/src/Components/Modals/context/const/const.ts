@@ -6,6 +6,7 @@ export const INTIAL_STATE_MODAL = {
 
 export const INITIAL_MODAL_CONTEXT = {
   modalState: INTIAL_STATE_MODAL,
-  setModalState: () => null
+  setModalState: () => null,
+  openModal: () => null
 }
 

@@ -2,17 +2,12 @@ import './App.css'
 import { useModalContext } from './Components/Modals/context/useModalContext'
 import { BookTable } from './Components/BookTable/BookTable'
 import { MainModal } from './Components/Modals/MainModal'
-
+import { ModalToChange } from './Components/Modals/ModalToChange'
 function App() {
 
   const { setModalState } = useModalContext()
+  const { openModal } = useModalContext()
 
-  function openModal(id: string) {
-    setModalState((prevState) => ({
-      ...prevState,
-      [id]: true
-    }))
-  }
 
   return (
     <div className='app'>
@@ -22,6 +17,8 @@ function App() {
       </div>
       <BookTable />
       <MainModal />
+      <ModalToChange />
+
     </div>
   )
 }

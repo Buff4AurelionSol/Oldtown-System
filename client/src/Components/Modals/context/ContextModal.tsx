@@ -12,5 +12,12 @@ export function ContextProvider({ children }: PropsProvider) {
 
   const [modalState, setModalState] = useState<ModalState>(INTIAL_STATE_MODAL)
 
-  return <ContextModal.Provider value={{ modalState, setModalState }}>{children}</ContextModal.Provider>
+  function openModal(id: string) {
+    setModalState((prevState) => ({
+      ...prevState,
+      [id]: true
+    }))
+  }
+
+  return <ContextModal.Provider value={{ modalState, setModalState, openModal }}>{children}</ContextModal.Provider>
 }

@@ -10,6 +10,6 @@ interface PropsBookProvider {
 }
 
 export function BookProvider({ children }: PropsBookProvider) {
-  const { books, setBooks, addBook, cleanBooks, deleteBook } = useBook()
-  return <ContextBook.Provider value={{ books, setBooks, addBook, cleanBooks, deleteBook }}>{children}</ContextBook.Provider>
+  const { books, setBooks, addBook, cleanBooks, deleteBook, bookToChangeState, setBookToChangeState, changeBook } = useBook()
+  return <ContextBook.Provider value={{ books, setBooks, addBook, cleanBooks, deleteBook, bookToChangeState, setBookToChangeState, changeBook }}>{children}</ContextBook.Provider>
 }
