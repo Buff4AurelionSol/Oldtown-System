@@ -11,11 +11,12 @@ export function MainModal() {
     e.preventDefault();
 
     const { title, genre, author, pages, words } = Object.fromEntries(new FormData(e.currentTarget)) as BookType
-
+    const uuid = crypto.randomUUID()
     const newBook: BookType = {
-      title, genre, author,
-      pages, words
+      uuid, title, genre,
+      author, pages, words
     }
+
     addBook(newBook)
 
 

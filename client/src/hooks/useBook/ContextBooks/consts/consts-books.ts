@@ -9,6 +9,7 @@ export const INITIAL_CONTEXT_BOOK = {
   deleteBook: () => null,
   changeBook: () => null,
   bookToChangeState: INITIAL_BOOK,
-  setBookToChangeState: () => null
+  setBookToChangeState: () => null,
+  onChange: () => null
 
 }

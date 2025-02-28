@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { initialBooks } from "../../consts/const"
-import { BookType } from "../../types/types"
+import { BookType, uuid } from "../../types/types"
 
 export const INITIAL_BOOK = {
+  uuid: `${""}-${""}-${""}-${""}-${""}` as uuid,
   title: "",
   genre: "",
   author: "",
@@ -17,6 +18,13 @@ export function useBook() {
 
 
   function addBook(book: BookType) {
+
+    books.find((bookToFind) => {
+      if ((bookToFind.title === book.title) && (bookToFind.author === book.author)) {
+        throw new Error("Ya se ha ingresado este libro")
+      }
+    })
+
     setBooks((prevState) => [...prevState, book])
   }
 
@@ -24,22 +32,21 @@ export function useBook() {
     e.preventDefault();
 
     const { title, genre, author, pages, words } = Object.fromEntries(new FormData(e.currentTarget)) as BookType
+    const { uuid } = bookToChangeState
+
     const newBook: BookType = {
-      title, genre, author,
-      pages, words
+      uuid, title, genre,
+      author, pages, words
     }
 
     const udpdateBooks = books.map((book) => {
-      if (book.title === bookToChangeState.title) {
+      if (book.uuid === bookToChangeState.uuid) {
         return newBook
       }
       return book
     })
 
     setBooks(udpdateBooks)
-
-
-    console.log(books)
   }
 
   function deleteBook(bookToDelete: BookType) {
@@ -51,6 +58,16 @@ export function useBook() {
 
   }
 
+  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.currentTarget;
+    setBookToChangeState((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+
+    console.log("Me estoy ejecutando")
+  }
+
 
   function cleanBooks() {
     setBooks(initialBooks)
@@ -59,6 +76,6 @@ export function useBook() {
 
 
 
-  return { books, setBooks, addBook, cleanBooks, deleteBook, changeBook, bookToChangeState, setBookToChangeState }
+  return { books, setBooks, addBook, cleanBooks, deleteBook, changeBook, bookToChangeState, setBookToChangeState, onChange }
 
 }
