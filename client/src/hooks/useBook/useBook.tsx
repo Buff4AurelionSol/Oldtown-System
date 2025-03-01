@@ -49,10 +49,10 @@ export function useBook() {
     setBooks(udpdateBooks)
   }
 
-  //Esta función tiene un bug. Arreglar para el proximo commit. Cambia la comparación de book.tile por book.uuid.
+
   function deleteBook(bookToDelete: BookType) {
     const newBook = books.filter((books) => {
-      return books.title !== bookToDelete.title
+      return books.uuid !== bookToDelete.uuid
     })
 
     setBooks(newBook)
