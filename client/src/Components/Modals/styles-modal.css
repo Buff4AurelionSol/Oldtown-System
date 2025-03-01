@@ -7,7 +7,6 @@
   display: flex; 
   justify-content: center;
   align-items: center;
-  background-color: black; 
 }
 
 .modal{
@@ -17,6 +16,7 @@
 }
 
 .modal form{
+  padding-top: 10px; 
   display: flex; 
   flex-direction: column;
   justify-content: center; 
@@ -24,4 +24,8 @@
   gap: 10px; 
   
 
+}
+
+.modal h2{
+  text-align: center;
 }

@@ -1,5 +1,6 @@
 import { UseContextBook } from "../../hooks/useBook/ContextBooks/useContextBook"
 import { useModalContext } from "../Modals/context/useModalContext"
+import "./styles-book-table.css"
 
 export function BookTable() {
   const { books, deleteBook, setBookToChangeState } = UseContextBook()
@@ -10,7 +11,7 @@ export function BookTable() {
   }
 
   return (
-    <table>
+    <table id="book-list">
       <thead>
         <tr>
           <th>Título</th>
@@ -33,8 +34,8 @@ export function BookTable() {
             <td>{book && <button onClick={() => {
               setBookToChangeState(book)
               openModal("modal-2")
-            }}>Modificar</button>}</td>
-            <td>{book && <button onClick={() => deleteBook(book)}>X</button>}</td>
+            }} className="editBookButton">Modificar</button>}</td>
+            <td>{book && <button onClick={() => deleteBook(book)} className="deleteBookButton">X</button>}</td>
           </tr>
         )
         }

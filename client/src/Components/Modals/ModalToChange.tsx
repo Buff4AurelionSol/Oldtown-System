@@ -9,7 +9,9 @@ export function ModalToChange() {
 
   return (
     <Modal id='modal-2'>
-      <h2>Modificar Modal</h2>
+      <div>
+        <h2>Modificar Modal</h2>
+      </div>
       <form onSubmit={changeBook}>
         <BaseInput label='Titulo' type='text' name="title" value={bookToChangeState.title} onChange={onChange} />
         <BaseInput label='Género' type='text' name="genre" value={bookToChangeState.genre} onChange={onChange} />
