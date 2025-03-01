@@ -5,8 +5,6 @@ import { UseContextBook } from "../../hooks/useBook/ContextBooks/useContextBook"
 export function ModalToChange() {
   const { bookToChangeState, changeBook, onChange } = UseContextBook()
 
-
-
   return (
     <Modal id='modal-2'>
       <div>

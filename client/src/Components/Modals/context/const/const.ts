@@ -1,5 +1,3 @@
-
-
 export const INTIAL_STATE_MODAL = {
   "": false
 }

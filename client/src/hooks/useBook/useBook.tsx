@@ -65,8 +65,6 @@ export function useBook() {
       ...prev,
       [name]: value
     }));
-
-    console.log("Me estoy ejecutando")
   }
 
 
