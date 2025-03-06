@@ -15,6 +15,7 @@ export function BookTable() {
       <table id="book-list">
         <thead>
           <tr>
+            <th>N°</th>
             <th>Título</th>
             <th>Género</th>
             <th>Autor</th>
@@ -25,8 +26,9 @@ export function BookTable() {
           </tr>
         </thead>
         <tbody>
-          {books.map((book) =>
+          {books.map((book, i) =>
             <tr key={book.title}>
+              <td>{i + 1}</td>
               <td>{book.title}</td>
               <td>{book.genre}</td>
               <td>{book.author}</td>
