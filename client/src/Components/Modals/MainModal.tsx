@@ -18,13 +18,12 @@ export function MainModal() {
     }
 
     addBook(newBook)
-
-
   }
 
   return (
     <Modal id='modal-1'>
       <form onSubmit={handleSubmit}>
+        <h2>Añadir un nuevo libro.</h2>
         <BaseInput label='Titulo' type='text' name="title" />
         <BaseInput label='Género' type='text' name="genre" />
         <BaseInput label='Autor' type='text' name="author" />

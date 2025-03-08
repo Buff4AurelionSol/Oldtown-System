@@ -10,9 +10,11 @@ interface PropsInput {
 
 export function BaseInput({ label, type, name, value, onChange }: PropsInput) {
   return (
-    <label className="label-base">
-      {label}
-      <input type={type} className="input-base" name={name} value={value} onChange={onChange} />
-    </label>
+    <div className="input-box">
+      <label className="label-base">
+        {label}
+        <input type={type} className="input-base" name={name} value={value} onChange={onChange} />
+      </label>
+    </div>
   )
 }
