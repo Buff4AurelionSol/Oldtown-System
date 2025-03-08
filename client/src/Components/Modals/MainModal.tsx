@@ -11,19 +11,19 @@ export function MainModal() {
     e.preventDefault();
 
     const { title, genre, author, pages, words } = Object.fromEntries(new FormData(e.currentTarget)) as BookType
-
+    const uuid = crypto.randomUUID()
     const newBook: BookType = {
-      title, genre, author,
-      pages, words
+      uuid, title, genre,
+      author, pages, words
     }
+
     addBook(newBook)
-
-
   }
 
   return (
     <Modal id='modal-1'>
       <form onSubmit={handleSubmit}>
+        <h2>Añadir un nuevo libro.</h2>
         <BaseInput label='Titulo' type='text' name="title" />
         <BaseInput label='Género' type='text' name="genre" />
         <BaseInput label='Autor' type='text' name="author" />

@@ -1,20 +1,25 @@
 .overlay{
-  position: absolute; 
+  position: absolute;
+  top: 0;
+  left: 0;  
   height: 100vh;
   width: 100%;
   display: flex; 
   justify-content: center;
   align-items: center;
-  background-color: black; 
+  background: #fafafa10; 
+  backdrop-filter: blur(0.4rem);
 }
 
 .modal{
   width: 50%; 
   height: 50%;
-  background-color: blue; 
+  background-color: #1b1b1b;
+  border-radius: 20px;
 }
 
 .modal form{
+  padding-top: 10px; 
   display: flex; 
   flex-direction: column;
   justify-content: center; 
@@ -23,3 +28,9 @@
   
 
 }
+
+.modal h2{
+  text-align: center;
+  color: white; 
+}
+
